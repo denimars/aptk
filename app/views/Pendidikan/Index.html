@@ -1,1 +1,10 @@
-haloooo
+{{set . "title" "sapi"}} {{template "header.html" .}} {{if .flash}} {{template "flash.html" .}} {{end}} {{template "menuadmin.html" .}}
+
+<div class="col-sm-4 col-sm-offset-4">
+    <form action="{{url "Pendidikan.Save"}}" method="post">
+        <input name="list" placeholder="list data">
+        <input type="submit" value="Save">
+    </form>
+</div>
+
+{{template "footer.html" .}}

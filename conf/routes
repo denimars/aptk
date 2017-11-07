@@ -12,6 +12,7 @@ GET     /                                       App.Index
 
 
 GET     /pendidikan                             Pendidikan.Index
+POST    /pendidikan                             Pendidikan.Save
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
