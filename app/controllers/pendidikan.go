@@ -14,7 +14,13 @@ type Pendidikan struct{
 }
 
 func(c Pendidikan) Index() revel.Result{
-	return c.Render()
+	var pendidikan []m.Pendidikan
+	err := app.DB.Find(&pendidikan)
+	if err.Error != nil{
+		panic(err.Error)
+	}
+	log.Println(pendidikan)
+	return c.Render(pendidikan)
 }
 
 func(c Pendidikan) Save(list string) revel.Result{
